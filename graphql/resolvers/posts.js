@@ -29,7 +29,7 @@ module.exports = {
   Mutation: {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
-      
+
       if (args.body.trim() === '') {
         throw new Error('Post body must not be empty');
       }
@@ -66,10 +66,10 @@ module.exports = {
       const post = await Post.findById(postId);
       if (post) {
         if (post.likes.find((like) => like.username === username)) {
-          // Post already likes, unlike it
+          // If liked, unlike the post
           post.likes = post.likes.filter((like) => like.username !== username);
         } else {
-          // Not liked, like post
+          // If not liked, like the post
           post.likes.push({
             username,
             createdAt: new Date().toISOString()
