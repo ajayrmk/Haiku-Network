@@ -1,9 +1,10 @@
 {
-  "name": "Haiku-Network",
+  "name": "haiku-network",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "serve": "node index",
     "start": "nodemon index"
   },
   "keywords": [],
